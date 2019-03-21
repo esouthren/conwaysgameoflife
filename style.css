@@ -1,0 +1,55 @@
+html, body {
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+#board {
+    
+}
+
+#boardCells {
+    width: 30vw;
+    height: 50vh;
+    border: 2px solid;
+    margin: 0px auto;
+    border-collapse: separate;    
+}
+
+#buttonGrid {
+    width: 40vw;
+    margin: 0px auto;
+    background-color: lightsteelblue;
+    border-radius: 0.5em;
+    padding: 1em;
+    font-size: 120%
+}
+
+.liveCell {
+    background-color: darkblue;
+    padding: 0px;
+    border: 1px solid;
+
+}
+
+button {
+    border-radius: 0.5em;
+    padding: 1em;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    
+}
+
+select {
+    background-color: aliceblue;
+    font-family: 'Montserrat';
+    font-size: 110%
+
+    
+}
+
+.deadCell {
+    background-color: white;
+    padding: 0px;
+    border: 1px solid;
+
+}

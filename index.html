@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <script src="game.js"></script>
+</head>
+<body>
+    <br />
+<h1> Conway's Game of Life Generator</h1>
+    <br />
+    <div id="board">
+    </div>
+    <table id="buttonGrid"><tr>
+        <td>Grid size: </td>
+        <td><select id="gridSize">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50" selected>50</option>
+            </select></td>
+        <td>Cycles: </td>
+        <td><select id="cycles">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">500</option>
+            <option value="1000000" selected>Infinite-ish</option>
+            </select></td>
+        </tr>
+        <tr>
+        <td>Speed: </td>
+        <td><select id="speed">
+            <option value="100" selected>Supersonic</option>
+            <option value="500">Normal</option>
+            <option value="1000">Tired</option>
+            <option value="2000">Snail</option>
+            </select></td>
+    
+        <td>Starting Cells: </td>
+        <td><select id="seed">
+            <option value="10">10%</option>
+            <option value="25" selected>25%</option>
+            <option value="50">50%</option>
+            <option value="75">75%</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><br /> <button onclick="newBoard()">Restart Grid</button></td>
+        </tr>
+    </table>
+    
+    <h4>Made by esouthren</h4>
+    Check out the <a href="https://github.com/esouthren/conwaysgameoflife">source code</a> on GitHub!
+    
+        <script>
+        $(document).ready(function() {
+            // Things to do when page loads
+            initBoard(50, 10000, 100, 25);
+        });
+            
+        
+    $(document).ready(function () {
+        console.log("changing size!");
+        $("#gridSize").change(function () {
+            newBoard();
+        });
+        
+        $("#cycles").change(function () {
+            newBoard();
+        });
+        
+        $("#speed").change(function () {
+            newBoard();
+        });
+
+        $("#seed").change(function () {
+            newBoard();
+        });
+
+    });
+            
+        function newBoard() {
+            var size = $("#gridSize").val();
+            var cycles = $("#cycles").val();
+            var speed = $("#speed").val();
+            var seed = $("#seed").val();
+            console.log("speed");
+            initBoard(size, cycles, speed, seed);
+
+        }
+
+        </script>
+    
+    
+</body>
+
+</html>
